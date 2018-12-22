@@ -2,7 +2,7 @@
 
 const multiplyByTen = num => {
   if (typeof num === 'string') {
-    throw new Error('value must be a number')
+    throw new Error('value must be a number');
   }
   if (!num) {
     return 0;
@@ -16,13 +16,16 @@ const subtractFive = num => {
     return null;
   }
   if (typeof num === 'string') {
-    throw new Error('value must be a number')
+    throw new Error('value must be a number');
   }
   return num - 5;
 };
 
 
 const areSameLength = (str1, str2) => {
+  if (typeof str1 !== 'string' ||typeof str2 !== 'string') {
+    throw new Error('value must be a string');
+  }
   return str1.length === str2.length;
 };
 
