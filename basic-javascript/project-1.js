@@ -12,6 +12,12 @@ const multiplyByTen = num => {
 
 
 const subtractFive = num => {
+  if (!num) {
+    return null;
+  }
+  if (typeof num === 'string') {
+    throw new Error('value must be a number')
+  }
   return num - 5;
 };
 
