@@ -36,6 +36,9 @@ const areEqual = (x, y) => {
 
 
 const lessThanNinety = num => {
+  if (typeof num === 'string') {
+    throw new Error('value must be a string');
+  }
   if (num < 90) {
     return true;
   }
@@ -44,6 +47,9 @@ const lessThanNinety = num => {
 
 
 const greaterThanFifty = num => {
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
   if (num > 50) {
     return true;
   }
