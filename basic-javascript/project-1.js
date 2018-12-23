@@ -58,21 +58,33 @@ const greaterThanFifty = num => {
 
 
 const add = (x, y) => {
+  if (typeof x === 'string' || typeof y === 'string') {
+    throw new Error('value must be a number');
+  }
   return x + y;
 };
 
 
 const subtract = (x, y) => {
+  if (typeof x === 'string' || typeof y === 'string') {
+    throw new Error('value must be a number');
+  }
   return x - y;
 };
 
 
 const divide = (x, y) => {
+  if (typeof x === 'string' || typeof y === 'string') {
+    throw new Error('value must be a number');
+  }
   return x / y;
 };
 
 
 const multiply = (x, y) => {
+  if (typeof x === 'string' || typeof y === 'string') {
+    throw new Error('value must be a number');
+  }
   return x * y;
 };
 
