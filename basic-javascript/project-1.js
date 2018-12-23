@@ -144,16 +144,25 @@ const raiseToPower = (num, exponent) => {
 
 
 const roundNumber = num => {
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
   return Math.round(num);
 };
 
 
 const roundUp = num => {
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
   return Math.ceil(num);
 };
 
 
 const addExclamationPoint = str => {
+  if (typeof str !== 'string') {
+    throw new Error('value must be a string');
+  }
   return (str += '!');
 };
 
