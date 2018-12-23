@@ -191,16 +191,27 @@ const getRectangleArea = (length, width) => {
 
 
 const getTriangleArea = (base, height) => {
+  if (typeof base === 'string' || typeof height === 'string') {
+    throw new Error('value must be a number');
+  }
   return 0.5 * base * height;
 };
 
 
 const getCircleArea = radius => {
+  if (typeof radius === 'string') {
+    throw new Error('value ust be a number');
+  }
   return Math.PI * radius * radius;
 };
 
 
 const getRectangularPrismVolume = (length, width, height) => {
+  if (typeof length === 'string' ||
+      typeof width === 'string' ||
+      typeof height === 'string') {
+        throw new Error('value must be a number');
+      }
   return width * height * length;
 };
 
