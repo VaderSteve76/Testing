@@ -90,11 +90,17 @@ const multiply = (x, y) => {
 
 
 const getRemainder = (x, y) => {
+  if (typeof x === 'string' || typeof y === 'string') {
+    throw new Error('value must be a number');
+  }
   return x % y;
 };
 
 
 const isEven = num => {
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
   if (num % 2 === 0) {
     return true;
   }
@@ -103,6 +109,9 @@ const isEven = num => {
 
 
 const isOdd = num => {
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
   if (num % 2 === 0) {
     return false;
   }
@@ -111,15 +120,25 @@ const isOdd = num => {
 
 
 const square = num => {
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
   return num * num;
 };
 
 
 const cube = num => {
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
   return num * num * num;
 };
 
+
 const raiseToPower = (num, exponent) => {
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
   return num ** exponent;
 };
 
