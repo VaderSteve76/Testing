@@ -168,15 +168,24 @@ const addExclamationPoint = str => {
 
 
 const combineNames = (firstName, lastName) => {
+  if (typeof firstName !== 'string' || typeof lastName !== 'string') {
+    throw new Error('value must be a string');
+  }
   return `${firstName} ${lastName}`;
 };
 
 const getGreeting = name => {
+  if (typeof name !== 'string') {
+    throw new Error('value must be a string');
+  }
   return `Hello ${name}!`;
 };
 
 
 const getRectangleArea = (length, width) => {
+  if (typeof length === 'string' || typeof width === 'string') {
+    throw new Error('value must be a number');
+  }
   return length * width;
 };
 
