@@ -67,3 +67,24 @@ describe('areSameLength', () => {
   });
 
 });
+
+//are values equal
+describe('checks if values are equal', () => {
+  it('checks if values are equal', () => {
+    const expected = true;
+    const actual = helpers.areEqual('bear', 'bear');
+    expect(actual).toEqual(expected);
+  });
+
+  it('checks if values are not equal', () => {
+    const expected = false;
+    const actual = helpers.areEqual(3, 4);
+    expect(actual).toEqual(expected);
+  });
+
+  it('throws error if values are not equal', () => {
+    const expected = false;
+    const actual = helpers.areEqual(3, '3');
+    expect(actual).toEqual(expected);
+  });
+});
