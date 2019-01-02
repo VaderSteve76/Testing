@@ -154,3 +154,25 @@ describe('add()', () => {
     expect;
   });
 });
+
+//subtract 2nd value from 1st value
+describe('subtract()', () => {
+  it('subtracts the 2nd value from the 1st value', () => {
+    const expected = 75;
+    const actual = helpers.subtract(150, 75);
+    expect(actual).toEqual(expected);
+  });
+
+  it('accepts decimals rounded to nearest hundredth', () => {
+    const expected = 100.1;
+    const actual = helpers.subtract(50.512, 50.41);
+    expect(actual).toEqual(expected);
+  });
+
+  it('throws error if a string is passed', () => {
+    expect(() => {
+      helpers.subtract('hello', 'world');
+    }).toThrow();
+    expect;
+  });
+});
