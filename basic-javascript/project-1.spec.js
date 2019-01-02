@@ -88,3 +88,25 @@ describe('checks if values are equal', () => {
     expect(actual).toEqual(expected);
   });
 });
+
+//less than 90
+describe('lessThanNinety()', () => {
+  it('checks if values are less than 90', () => {
+    const expected = true;
+    const actual = helpers.lessThanNinety(80);
+    expect(actual).toEqual(expected);
+  });
+
+  it('checks if values are not less than 90', () => {
+    const expected = false;
+    const actual = helpers.lessThanNinety(91)
+    expect(actual).toEqual(expected);
+  });
+
+  it('throws error if a string is passed', () => {
+    expect(() => {
+      helpers.lessThanNinety('123');
+    }).toThrow();
+    expect;
+  });
+});
