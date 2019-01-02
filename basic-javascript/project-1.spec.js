@@ -46,3 +46,24 @@ describe('subtractfive()', () => {
   });
 
 });
+
+//same length strings
+describe('areSameLength', () => {
+  it('checks if strings are same length', () => {
+    const expected = true;
+    const actual = helpers.areSameLength('bear', 'bear');
+  });
+
+  it('checks if strings are not same length', () => {
+    const expected = false;
+    const actual = helpers.areSameLength('bear', 'bears');
+  });
+
+  it('throws error if no string is passed', () => {
+    expect(() => {
+      helpers.areSameLength(123, 123);
+    }).toThrow();
+    expect;
+  });
+
+});
