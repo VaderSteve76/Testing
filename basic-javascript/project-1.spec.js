@@ -40,7 +40,7 @@ describe('subtractfive()', () => {
 
   it('error if a string', () => {
     expect(() => {
-      helpers.subtractFive('123');
+      helpers.subtractFive('hello');
     }).toThrow();
     expect;
   });
@@ -51,12 +51,12 @@ describe('subtractfive()', () => {
 describe('areSameLength', () => {
   it('checks if strings are same length', () => {
     const expected = true;
-    const actual = helpers.areSameLength('bear', 'bear');
+    const actual = helpers.areSameLength('cat', 'cat');
   });
 
   it('checks if strings are not same length', () => {
     const expected = false;
-    const actual = helpers.areSameLength('bear', 'bears');
+    const actual = helpers.areSameLength('cat', 'cats');
   });
 
   it('throws error if no string is passed', () => {
@@ -72,7 +72,7 @@ describe('areSameLength', () => {
 describe('checks if values are equal', () => {
   it('checks if values are equal', () => {
     const expected = true;
-    const actual = helpers.areEqual('bear', 'bear');
+    const actual = helpers.areEqual('cat', 'cat');
     expect(actual).toEqual(expected);
   });
 
@@ -91,21 +91,65 @@ describe('checks if values are equal', () => {
 
 //less than 90
 describe('lessThanNinety()', () => {
-  it('checks if values are less than 90', () => {
+  it('checks if values are less than ninety', () => {
     const expected = true;
     const actual = helpers.lessThanNinety(80);
     expect(actual).toEqual(expected);
   });
 
-  it('checks if values are not less than 90', () => {
+  it('checks if values are not less than ninety', () => {
     const expected = false;
-    const actual = helpers.lessThanNinety(91)
+    const actual = helpers.lessThanNinety(100)
     expect(actual).toEqual(expected);
   });
 
   it('throws error if a string is passed', () => {
     expect(() => {
-      helpers.lessThanNinety('123');
+      helpers.lessThanNinety('hello');
+    }).toThrow();
+    expect;
+  });
+});
+
+//greater than 50
+describe('greaterThanFifty()', () => {
+  it('checks if value is greater than fifty', () => {
+    const expected = true;
+    const actual = helpers.greaterThanFifty(51);
+    expect(actual).toEqual(expected);
+  });
+
+  it('checks if values are less than fifty', () => {
+    const expected = false;
+    const actual = helpers.greaterThanFifty(40);
+    expect(actual).toEqual(expected);
+  });
+
+  it('throws error if a string is passed', () => {
+    expect(() => {
+      helpers.greaterThanFifty('hello');
+    }).toThrow();
+    expect;
+  });
+});
+
+//add 2 values
+describe('add()', () => {
+  it('adds sum of numbers', () => {
+    const expected = 150;
+    const actual = helpers.add(75, 75);
+    expect(actual).toEqual(expected);
+  });
+
+  it('rounds to the nearest hundredth', () => {
+    const expected = 149.98;
+    const actual = helpers.add(100.412, 49.568);
+    expect(actual).toBeCloseTo(expected);
+  });
+
+  it('throws error if a string is passed', () => {
+    expect(() => {
+      helpers.add('hello', 'world');
     }).toThrow();
     expect;
   });
