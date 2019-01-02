@@ -176,3 +176,31 @@ describe('subtract()', () => {
     expect;
   });
 });
+
+//divide
+describe('divide()', () => {
+  it('divides 1st value by the 2nd value', () => {
+    const expected = 50;
+    const actual = helpers.divide(100, 2);
+    expect(actual).toEqual(expected);
+  });
+
+  it('accepts decimal values rounded to nearest tenth', () => {
+    const expected = 50;
+    const actual = helpers.divide(100, 2);
+    expect(actual).toEqual(expected);
+  });
+
+  it('accepts fractions', () => {
+    const expected = 0.44;
+    const actual = helpers.divide(1/3, 6/8);
+    expect(actual).toBeCloseTo(expected);
+  });
+
+  it('throws error if a string is poassed', () => {
+    expect(() => {
+      helpers.divide('hello', 'world');
+    }).toThrow();
+    expect;
+  });
+});
