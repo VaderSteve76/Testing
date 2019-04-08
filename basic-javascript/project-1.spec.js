@@ -228,3 +228,17 @@ describe('getRemainder()', () => {
     expect(actual).toBeNaN();
   });
 });
+
+describe ('isEven()', () => {
+  it('will return true if value is even', () => {
+    const expected = true;
+    const actual = helpers.isEven(6);
+    expect(atual).toBe(expected);
+  });
+  it('will throm an error if a string is passed', () => {
+    expect(() => {
+      helpers.isEven('333')
+    }).toThrow();
+    expect;
+  });
+});
