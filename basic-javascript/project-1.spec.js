@@ -204,3 +204,15 @@ describe('divide()', () => {
     expect;
   });
 });
+
+describe('multiply()', () => {
+  it('multiplies two numbers given', () => {
+    const expected = 100;
+    const actual = helpers.multiply(50, 2);
+    expect(actual).toEqual(expected);
+  });
+  it('will retrun NAN if not a number', () => {
+    const actual = helpers.multiply(50, 'car');
+    expect(actual).toBeNaN();
+  });
+});
