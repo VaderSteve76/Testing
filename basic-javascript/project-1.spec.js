@@ -216,3 +216,15 @@ describe('multiply()', () => {
     expect(actual).toBeNaN();
   });
 });
+
+describe('getRemainder()', () => {
+  it('gets the remainder of the first value divided by the second', () => {
+    const expected = 2;
+    const actual = helpers.getRemainder(2, 1);
+    expect(actual).toEqual(expected);
+  });
+  it('will return NAN if not a number', () => {
+    const actual = helpers.getRemainder(2, 'car');
+    expect(actual).toBeNaN();
+  });
+});
